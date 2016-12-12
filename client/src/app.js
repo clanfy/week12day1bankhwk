@@ -23,7 +23,13 @@ window.onload = function() {
   console.log("We created a new bank", bank);
 
   var totalDisplay = document.getElementById('total');
-  totalDisplay.innerText = "Total: £" + bank.totalCash();
+  var businessTotalDisplay = document.getElementById('business-total');
+  var personalTotalDisplay = document.getElementById('personal-total');
+
+  totalDisplay.innerText = "Total: £" + bank.totalCash().toFixed(2);
+  businessTotalDisplay.innerText = "Total Business: £" + bank.totalCash('business').toFixed(2);
+  personalTotalDisplay.innerText = "Total Personal: £" + bank.totalCash('personal').toFixed(2);
+
 
   var accountList = document.getElementById('accounts');
   for (var account of bank.accounts){
@@ -32,11 +38,6 @@ window.onload = function() {
    accountList.appendChild(accountListItem);
  }
 
-var businessTotalDisplay = document.getElementById('business-total');
-var personalTotalDisplay = document.getElementById('personal-total');
-
-businessTotalDisplay.innerText = "Total Business: £" + bank.totalCash('business');
-personalTotalDisplay.innerText = "Total Personal: £" + bank.totalCash('personal');
 
 var businessList = document.getElementById('business-accounts');
 var personalList = document.getElementById('personal-accounts');
