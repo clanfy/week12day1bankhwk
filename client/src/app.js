@@ -32,7 +32,6 @@ window.onload = function() {
    accountList.appendChild(accountListItem);
  }
 
-
 var businessTotalDisplay = document.getElementById('business-total');
 var personalTotalDisplay = document.getElementById('personal-total');
 
