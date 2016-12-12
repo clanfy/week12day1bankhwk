@@ -31,17 +31,11 @@ window.onload = function() {
   personalTotalDisplay.innerText = "Total Personal: £" + bank.totalCash('personal').toFixed(2);
 
 
-  var accountList = document.getElementById('accounts');
-  for (var account of bank.accounts){
-   var accountListItem = document.createElement('li');
-   accountListItem.innerText =  account.owner + ": £" + account.amount.toFixed(2);
-   accountList.appendChild(accountListItem);
- }
-
-
+var accountsList = document.getElementById('accounts');
 var businessList = document.getElementById('business-accounts');
 var personalList = document.getElementById('personal-accounts');
 
+populateAccountList(accountsList, bank.accounts);
 populateAccountList(businessList, bank.filteredAccounts('business'));
 populateAccountList(personalList, bank.filteredAccounts('personal'));
 
