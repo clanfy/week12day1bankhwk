@@ -2,17 +2,17 @@ var Bank = require('./bank/bank.js');
 var sampleAccounts = require('../sample.json');
 var Account = require('./bank/account.js');
 
-var createItemForAccount = function(account){
-  var accountListItem = document.createElement('li');
-  accountListItem.innerText = account.owner + ": £" + account.amount.toFixed(2);
-  return accountListItem;
-};
+// var createItemForAccount = function(account){
+//   var accountListItem = document.createElement('li');
+//   accountListItem.innerText = account.owner + ": £" + account.amount.toFixed(2);
+//   return accountListItem;
+// };
 
-var populateAccountList = function(listElement, accounts){
-  for (account of accounts){
-    listElement.appendChild(createItemForAccount(account));
-  }
-};
+// var populateAccountList = function(listElement, accounts){
+//   for (account of accounts){
+//     listElement.appendChild(createItemForAccount(account));
+//   }
+// };
 
 window.onload = function() {
   console.log('loaded');
